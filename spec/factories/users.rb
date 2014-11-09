@@ -1,3 +1,5 @@
+require 'faker'
+
 FactoryGirl.define do
   factory :person, class: :user do
     screen_name Faker::Internet.user_name

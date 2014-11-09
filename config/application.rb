@@ -11,6 +11,7 @@ Bundler.require(*Rails.groups)
 
 module Kurobako
   class Application < Rails::Application
+    config.quiet_assets = true
     config.generators do |g|
       g.test_framework :rspec,
         fixtures: true,

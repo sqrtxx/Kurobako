@@ -22,6 +22,7 @@ group :development do
   gem 'guard-rspec'
   gem 'guard-shell'
   gem 'rails_best_practices'
+  gem 'quiet_assets'
 end
 
 group :development, :test do
@@ -30,7 +31,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'faker', '~> 1.1.2'
+  gem 'faker', '~> 1.4.3'
   gem 'database_cleaner', '~> 1.0.1'
   gem 'coveralls', :require => false
 end
