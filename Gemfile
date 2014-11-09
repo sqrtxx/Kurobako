@@ -31,4 +31,5 @@ end
 group :test do
   gem 'faker', '~> 1.1.2'
   gem 'database_cleaner', '~> 1.0.1'
+  gem 'coveralls', :require => false
 end

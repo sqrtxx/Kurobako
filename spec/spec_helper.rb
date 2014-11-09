@@ -4,6 +4,8 @@ require 'rspec/rails'
 require 'rspec/autorun'
 require 'factory_girl'
 require 'faker'
+require 'coveralls'
+Coveralls.wear!
 
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
