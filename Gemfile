@@ -8,6 +8,7 @@ gem 'sqlite3'
 
 # Rails Plugins
 gem 'sass-rails', '~> 4.0.3'
+gem 'slim-rails'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
