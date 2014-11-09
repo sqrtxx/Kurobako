@@ -1,2 +1,21 @@
-<h1>MainPage#index</h1>
-<p>Find me in app/views/main_page/index.html.erb</p>
+h1
+  | MainPage#index
+p
+  | Find me in app/views/main_page/index.html.slim
+.user-view
+  - @users.each do |user|
+    .id
+      ' ID
+      = user.id
+    .screen_name
+      ' 表示名
+      = user.screen_name
+    .full_name
+      ' フルネーム
+      = user.full_name
+    .email
+      ' メールアドレス
+      = user.email
+    .description
+      ' 自己紹介
+      = user.description
