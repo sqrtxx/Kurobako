@@ -1,11 +1,9 @@
-# Read about factories at https://github.com/thoughtbot/factory_girl
-
 FactoryGirl.define do
-  factory :user do
-    screen_name "MyString"
-    full_name "MyString"
-    email "MyString"
-    description "MyString"
-    url "MyText"
+  factory :person, class: :user do
+    screen_name Faker::Internet.user_name
+    full_name Faker::Name.name
+    email Faker::Internet.email
+    description Faker::Lorem.sentence(3)
+    url Faker::Internet.url
   end
 end
