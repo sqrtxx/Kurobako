@@ -5,7 +5,12 @@ describe User do
   let(:user) { create :person }
 
   describe 'validations' do
-    it { expect(build(:person, screen_name: nil)).to have(2).errors_on(:screen_name) }
+    it { expect(build(:person, screen_name: nil)).to have(3).errors_on(:screen_name) }
+    it { expect(build(:person, screen_name: ';;;')).to have(1).errors_on(:screen_name) }
+    it { expect(build(:person, screen_name: 'aA0_')).to have(0).errors_on(:screen_name) }
+    it { expect(build(:person, screen_name: 'Aaa')).to have(0).errors_on(:screen_name) }
+    it { expect(build(:person, screen_name: '_aa')).to have(1).errors_on(:screen_name) }
+    it { expect(build(:person, screen_name: '0aa')).to have(0).errors_on(:screen_name) }
     it { expect(build(:person, screen_name: 'a' * 2)).to have(1).errors_on(:screen_name) }
     it { expect(build(:person, screen_name: 'a' * 3)).to have(0).errors_on(:screen_name) }
     it { expect(build(:person, screen_name: 'a' * 20)).to have(0).errors_on(:screen_name) }
