@@ -13,6 +13,10 @@ module Kurobako
   class Application < Rails::Application
     config.quiet_assets = true
     config.generators do |g|
+      g.template_engine :slim
+      g.assets          true
+      g.helper          true
+      g.jbuilder        false
       g.test_framework :rspec,
         fixtures: true,
         view_specs: false,
