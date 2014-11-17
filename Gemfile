@@ -14,6 +14,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'seed-fu', '~> 2.3'
+gem 'bcrypt'
 
 group :development do
   gem 'spring'
