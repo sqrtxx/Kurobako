@@ -1,6 +1,6 @@
 = form_for(@user) do |f|
   - if @user.errors.any?
-    #id = "error_explanation"
+    #error_explanation
       h2 = pluralize(@user.errors.count, "error")
         | prohibited this user from being saved:
       ul
@@ -22,5 +22,11 @@
   .field
     = f.label :url
     = f.text_area :url
+  .field
+    = f.label :password
+    = f.text_area :password
+  .field
+    = f.label :password_confirmation
+    = f.text_area :password_confirmation
   .actions
     = f.submit
