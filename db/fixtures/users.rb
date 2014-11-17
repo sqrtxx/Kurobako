@@ -10,5 +10,7 @@ Faker::Config.locale = 'en'
     u.email = Faker::Internet.email
     u.description = Faker::Lorem.sentence(3)
     u.url = Faker::Internet.url
+    u.password = 'foobar'
+    u.password_confirmation = 'foobar'
   end
 end

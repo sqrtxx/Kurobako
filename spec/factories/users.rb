@@ -7,5 +7,7 @@ FactoryGirl.define do
     email Faker::Internet.email
     description Faker::Lorem.sentence(3)
     url Faker::Internet.url
+    password 'password'
+    password_confirmation 'password'
   end
 end
