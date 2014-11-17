@@ -1,0 +1,30 @@
+p#notice = notice
+
+p
+  strong Screen name:
+  = @user.screen_name
+
+
+p
+  strong Full name:
+  = @user.full_name
+
+
+p
+  strong Email:
+  = @user.email
+
+
+p
+  strong Description:
+  = @user.description
+
+
+p
+  strong Url:
+  = @user.url
+
+
+= link_to 'Edit', edit_user_path(@user)
+|  |
+= link_to 'Back', users_path
