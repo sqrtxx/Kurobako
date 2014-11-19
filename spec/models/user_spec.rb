@@ -4,6 +4,8 @@ describe User do
 
   let(:user) { create :person }
 
+  it { should respond_to(:remember_token) }
+
   describe 'validations' do
     it { expect(build(:person, screen_name: nil)).to have(3).errors_on(:screen_name) }
     it { expect(build(:person, screen_name: ';;;')).to have(1).errors_on(:screen_name) }
@@ -33,6 +35,12 @@ describe User do
       subject { create(:person, password: 'hogehoge', password_confirmation: 'hagehage') }
       it { expect{ subject }.to raise_error ActiveRecord::RecordInvalid }
     end
+  end
+
+  describe '.remember_token' do
+    let(:user) { build :person }
+    before(:each) { user.save }
+    it { expect(user.remember_token).not_to be_blank }
   end
 
   describe '.recent' do
