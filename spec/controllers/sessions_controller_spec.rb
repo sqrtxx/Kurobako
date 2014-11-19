@@ -1,15 +1,21 @@
 require 'spec_helper'
+include SessionsHelper
 
 describe SessionsController do
   let(:person) { create :person }
-  describe 'Sessions#new' do
+  describe '#new' do
     subject { get :new }
     it { expect(subject.status).to eq 200 }
     it { expect(subject).to render_template 'sessions/new' }
   end
-  describe 'Sessions#create' do
+  describe '#create' do
     before(:each) { person }
     subject { post :create, session: { email: person.email, password: 'password' } }
     it { expect(subject).to redirect_to root_url }
+  end
+  describe '#destroy' do
+    before(:each) { person }
+    subject { post :destroy }
+    it { expect(signed_in?).to be_false }
   end
 end
