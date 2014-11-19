@@ -232,6 +232,7 @@ DEPENDENCIES
   rspec-rails (~> 2.14.0)
   sass-rails (~> 4.0.3)
   seed-fu (~> 2.3)
+  simplecov
   slim-rails
   spring
   spring-commands-rspec

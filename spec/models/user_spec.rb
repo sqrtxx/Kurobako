@@ -50,4 +50,15 @@ describe User do
     it { expect(User.recent).to eq [user_1_day_ago, user_2_days_ago] }
   end
 
+  describe 'self.new_remember_token' do
+    subject { User.new_remember_token }
+    it { expect(subject).to be_an_instance_of(String) }
+  end
+
+  describe 'self.encrypt' do
+    let(:token) { 'hogehoge' }
+    subject { User.encrypt(token) }
+    it { expect(subject).to eq '3b2c6c10d0e78072d14e02cc4c587814d0f10f3a' }
+  end
+
 end
