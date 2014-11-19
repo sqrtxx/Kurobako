@@ -14,8 +14,9 @@ describe SessionsController do
     it { expect(subject).to redirect_to root_url }
   end
   describe '#destroy' do
-    before(:each) { person }
-    subject { post :destroy }
-    it { expect(signed_in?).to be_false }
+    before(:each) { person; sign_in person }
+    subject { delete :destroy, {}, {} }
+    # it { subject; expect(signed_in?).to be_false }
+    it { expect(subject).to redirect_to root_url }
   end
 end
