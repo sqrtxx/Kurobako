@@ -6,4 +6,8 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   body
+    - unless signed_in?
+      = link_to 'Sign in', signin_path
+    - else
+      = button_to 'Sign out', signout_path, method: :delete
     = yield
